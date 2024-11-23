@@ -1,0 +1,143 @@
+object MainForm3: TMainForm3
+  Left = 0
+  Top = 0
+  Caption = 'FB4Dtest con Imagen'
+  ClientHeight = 450
+  ClientWidth = 800
+  Padding.Left = 5.000000000000000000
+  Padding.Top = 5.000000000000000000
+  Padding.Right = 5.000000000000000000
+  Padding.Bottom = 5.000000000000000000
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object PromptGrp: TGroupBox
+    Align = Top
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 790.000000000000000000
+    Size.Height = 172.000000000000000000
+    Size.PlatformDefault = False
+    Text = ' Petici'#243'n '
+    TabOrder = 0
+    object PromptBtn: TButton
+      Align = Right
+      Enabled = False
+      Margins.Left = 15.000000000000000000
+      Position.X = 678.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 137.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 37
+      Text = 'Enviar'
+      TextSettings.Trimming = None
+      OnClick = PromptBtnClick
+    end
+    object PromptLay: TLayout
+      Align = Client
+      Size.Width = 648.000000000000000000
+      Size.Height = 137.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 38
+      object PromptMem: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          #191'Cual es el nombre de la verdura  que aparece en la imagen?')
+        TextSettings.WordWrap = True
+        OnChangeTracking = PromptMemChangeTracking
+        Align = Client
+        Size.Width = 648.000000000000000000
+        Size.Height = 107.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 38
+        Viewport.Width = 648.000000000000000000
+        Viewport.Height = 107.000000000000000000
+      end
+      object AttachmentLay: TLayout
+        Align = Bottom
+        Padding.Top = 5.000000000000000000
+        Position.Y = 107.000000000000000000
+        Size.Width = 648.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 39
+        object AttachmentEdt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 0
+          ReadOnly = True
+          Size.Width = 478.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          OnChangeTracking = PromptMemChangeTracking
+        end
+        object SelectBtn: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Position.X = 483.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Seleccionar'
+          TextSettings.Trimming = None
+          OnClick = SelectBtnClick
+        end
+        object ClearBtn: TButton
+          Align = MostRight
+          Margins.Left = 5.000000000000000000
+          Position.X = 568.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Eliminar'
+          TextSettings.Trimming = None
+          OnClick = ClearBtnClick
+        end
+      end
+    end
+  end
+  object ResponseGrp: TGroupBox
+    Align = Client
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Size.Width = 790.000000000000000000
+    Size.Height = 253.000000000000000000
+    Size.PlatformDefault = False
+    Text = ' Respuesta '
+    TabOrder = 1
+    object ResponseMem: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      Align = Client
+      Size.Width = 760.000000000000000000
+      Size.Height = 218.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 37
+      Viewport.Width = 760.000000000000000000
+      Viewport.Height = 218.000000000000000000
+    end
+  end
+  object SelectFileDlg: TOpenDialog
+    DefaultExt = 'JPG'
+    Filter = 'Archivos JPG (*.jpg)|*.jpg'
+    Left = 508
+    Top = 49
+  end
+end

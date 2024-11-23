@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3B03B3C8-2853-43D4-9697-1185A14E1576}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FB4Dtest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FB4Dtest_con_PDF.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FB4Dtest_con_Imagen.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FB4Dtest">
+        <MSBuild Projects="FB4Dtest.dproj"/>
+    </Target>
+    <Target Name="FB4Dtest:Clean">
+        <MSBuild Projects="FB4Dtest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FB4Dtest:Make">
+        <MSBuild Projects="FB4Dtest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FB4Dtest_con_PDF">
+        <MSBuild Projects="FB4Dtest_con_PDF.dproj"/>
+    </Target>
+    <Target Name="FB4Dtest_con_PDF:Clean">
+        <MSBuild Projects="FB4Dtest_con_PDF.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FB4Dtest_con_PDF:Make">
+        <MSBuild Projects="FB4Dtest_con_PDF.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FB4Dtest_con_Imagen">
+        <MSBuild Projects="FB4Dtest_con_Imagen.dproj"/>
+    </Target>
+    <Target Name="FB4Dtest_con_Imagen:Clean">
+        <MSBuild Projects="FB4Dtest_con_Imagen.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FB4Dtest_con_Imagen:Make">
+        <MSBuild Projects="FB4Dtest_con_Imagen.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FB4Dtest;FB4Dtest_con_PDF;FB4Dtest_con_Imagen"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FB4Dtest:Clean;FB4Dtest_con_PDF:Clean;FB4Dtest_con_Imagen:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FB4Dtest:Make;FB4Dtest_con_PDF:Make;FB4Dtest_con_Imagen:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

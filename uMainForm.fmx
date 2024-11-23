@@ -1,0 +1,84 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'FB4Dtest'
+  ClientHeight = 450
+  ClientWidth = 800
+  Padding.Left = 5.000000000000000000
+  Padding.Top = 5.000000000000000000
+  Padding.Right = 5.000000000000000000
+  Padding.Bottom = 5.000000000000000000
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object PromptGrp: TGroupBox
+    Align = Top
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Margins.Bottom = 15.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 790.000000000000000000
+    Size.Height = 124.000000000000000000
+    Size.PlatformDefault = False
+    Text = ' Petici'#243'n '
+    TabOrder = 0
+    object PromptBtn: TButton
+      Align = Right
+      Margins.Left = 15.000000000000000000
+      Position.X = 678.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 89.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 39
+      Text = 'Enviar'
+      TextSettings.Trimming = None
+      OnClick = PromptBtnClick
+    end
+    object PromptMem: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Lines.Strings = (
+        #191'Cual es el peso at'#243'mico del hidrogeno?')
+      TextSettings.WordWrap = True
+      OnChangeTracking = PromptMemChangeTracking
+      Align = Client
+      Size.Width = 648.000000000000000000
+      Size.Height = 89.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 38
+      Viewport.Width = 644.000000000000000000
+      Viewport.Height = 85.000000000000000000
+    end
+  end
+  object ResponseGrp: TGroupBox
+    Align = Client
+    Padding.Left = 15.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 15.000000000000000000
+    Size.Width = 790.000000000000000000
+    Size.Height = 301.000000000000000000
+    Size.PlatformDefault = False
+    Text = ' Respuesta '
+    TabOrder = 1
+    object ResponseMem: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      Align = Client
+      Size.Width = 760.000000000000000000
+      Size.Height = 266.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 38
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 262.000000000000000000
+    end
+  end
+end
